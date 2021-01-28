@@ -1,0 +1,54 @@
+#!/bin/bash
+text="$3"
+btn1="$4"
+btn2="$5"
+btn3="$6"
+
+case "$1" in
+1) icon="(i) " ;;
+2) icon="(?) " ;;
+3) icon="(!) " ;;
+3) icon="(!) " ;;
+4) icon="(X) " ;;
+5) icon="))) " ;;
+esac
+
+sep=""
+len=0
+IFS='
+'
+for line in $text; do
+    s="${icon//?/-}${line//?/-}"
+    l=${#s}
+    if [ $l -gt $len ] ; then
+        sep="$s"
+        len=$l
+    fi
+done
+
+btns=$( printf "%-${len}s" "1) $btn1${btn2:+ | 2) }$btn2${btn3:+ | 3) }$btn3" )
+if [ ${#btns} -gt $len ] ; then
+    len=${#btns}
+    sep="${btns//?/-}"
+fi
+
+{
+echo "+-$sep-+"
+i="$icon"
+n="${icon//?/ }"
+for line in $text; do
+    printf "| %-${len}s |\n" "$i$line"
+    i=$n
+done
+echo "+-$sep-+"
+echo "| $btns |"
+echo "+-$sep-+"
+}>$(tty)
+
+while read r ; do
+    case "$r" in
+    1|$btn1) exit 1 ;;
+    2|$btn2) exit 2 ;;
+    3|$btn3) exit 3 ;;
+    esac
+done

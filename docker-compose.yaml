@@ -1,0 +1,26 @@
+version: "3.5"
+
+services:
+  make:
+    image: dennwc/pocketbook-go-sdk
+    volumes:
+    - type: bind
+      source: ./src
+      target: /app
+    entrypoint:
+    - go
+    command:
+    - build
+  dev:
+    build:
+      context: ./pbuilder
+    image: pbibfix
+    volumes:
+    - type: bind
+      source: ./src
+      target: /src
+    - type: bind
+      source: ./ext1
+      target: /mnt/ext1
+    entrypoint:
+    - /bin/bash
