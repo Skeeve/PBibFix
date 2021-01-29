@@ -11,7 +11,7 @@ PocketBook is very picky about metadata found in epubs.
 
 These are the first two issues this application is going to fix.
 
-Please note: The application will **not** fix the meta data inside the box. It will only fix the entries in pocketbook's database.
+Please note: The application will **not** fix the meta data inside the books. It will only fix the entries in pocketbook's database.
 
 ## Compatibility
 
