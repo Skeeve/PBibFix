@@ -60,9 +60,9 @@ Please find a list of possible error messages below.
 
 All these messages are followed by some more text.
 
-These issues might not be easy to solve, so please report the on [github](https://github.com/Skeeve/PBibFix/issues).
+These issues might not be easy to solve, so please report them on [github](https://github.com/Skeeve/PBibFix/issues).
 
-Please describe the issues in German or English, please.
+Describe the issues in German or English, please.
 
 * *filename*: *errormessage*
 
@@ -70,11 +70,9 @@ This error can only be found in the log file.
 
 The book with the *filename* did not parse correctly.
 
-THis usually happens with badly created ePub files.
+This usually happens with badly created ePub files.
 
-You should to fix those issues.
-
-For this, check that file using [calibre](https://calibre-ebook.com/) or [pagina's EPUB-checker](https://www.pagina.gmbh/produkte/epub-checker/).
+To fix those issues, check that file using [calibre](https://calibre-ebook.com/) or [pagina's EPUB-checker](https://www.pagina.gmbh/produkte/epub-checker/).
 
 For help with those issues, please go to [e-reader-forum](https://www.e-reader-forum.de/f/epub.197/).
 
