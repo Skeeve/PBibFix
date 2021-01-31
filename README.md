@@ -7,7 +7,8 @@ A Pocketbook Application designed to fix entries in PocketBook's Library (Biblio
 PocketBook is very picky about metadata found in epubs.
 
 * Infos about book series can only be found when they are in a specific order.
-* Author names can only be found if the XML namespace is exactly `opf`
+* Author names can only be found if the XML namespace is exactly `opf`.
+* (Not sure whether or not this is an issue) Books which were deleted from  the device and from the cloud still are present in the database.
 
 These are the first two issues this application is going to fix.
 
@@ -23,6 +24,61 @@ Please feel free to report about other devices or firmware versions where you ra
 Copy PBibFix.app to your pocketbook's applications directory.
 Use it each time you copied new books onto the device or at least each time
 you found a mistake in the library.
+
+## Usage
+
+When you start the application it will first ask you, whether or not to remove any books from the database which are no longer present on the device and also are missing in the cloud, provided there are any.
+
+It will then clean up those entries, if you wanted to and then fix other book entries.
+
+At the end you will get a list of changes done and maybe errors encountered.
+
+When running, the application creates a log file `PBibFix.log`.
+
+This file is mainly for cases when the application encountered errors and you can delete it.
+
+But in case you are interested what the script did, you can keep it.
+
+Copy it over to your computer and view it with any text editor.
+
+As the file extension is `.log` it's not easily possible to view the file directly on the device.
+
+## Errors
+
+Please find a list of possible error messages below.
+
+* While opening the database
+* While running a database query
+* While getting deleted books from the database
+* While starting a transaction
+* While removing deleted books
+* While removing entries from *table*
+* While running a database query
+* While getting a book entry from the database
+* While fixing firstauthor for *filename*
+* While fixing series for *filename*
+
+All these messages are followed by some more text.
+
+These issues might not be easy to solve, so please report the on [github](https://github.com/Skeeve/PBibFix/issues).
+
+Please describe the issues in German or English, please.
+
+* *filename*: *errormessage*
+
+This error can only be found in the log file.
+
+The book with the *filename* did not parse correctly.
+
+THis usually happens with badly created ePub files.
+
+You should to fix those issues.
+
+For this, check that file using [calibre](https://calibre-ebook.com/) or [pagina's EPUB-checker](https://www.pagina.gmbh/produkte/epub-checker/).
+
+For help with those issues, please go to [e-reader-forum](https://www.e-reader-forum.de/f/epub.197/).
+
+Describe the issue well and it's most probable that someone there can assist you.
 
 ## Build
 
