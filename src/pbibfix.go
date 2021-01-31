@@ -131,7 +131,7 @@ func main() {
 	// Ask whether or not to remove the entries
 	if numDeleted > 0 {
 		if 1 == pocketbook.Dialog(pocketbook.Question,
-			"Number of books deleted from Device and Cloud: "+strconv.FormatInt(numDeleted, 20)+
+			"Number of books deleted from Device and Cloud: "+strconv.FormatInt(numDeleted, 10)+
 				"\n\nRemove them from the database?",
 			"Yes", /*1*/
 			"No",  /*2*/
