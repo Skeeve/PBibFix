@@ -1,3 +1,13 @@
+# NOTE
+
+Currently this code is unusable.
+
+I tried to fix it but it seems the database structure of PocketBooks has changed in the last years.
+
+I do not think it's worth updating, convince me otherwise by opening a new issue.
+
+Or check this repository with a similar and, I think, more advanced tool: https://git.rustysoft.de/martin/PbDbFixer
+
 # PBibFix
 
 A Pocketbook Application designed to fix entries in PocketBook's Library (Bibliothek) database.
